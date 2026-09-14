@@ -1,0 +1,23 @@
+node_modules/
+data/
+.vercel/
+dist/
+.output/
+
+# Local secrets — never commit or scp this; set it on the VPS
+.env
+.env.*
+!.env.example
+
+# Field photos / PDFs dropped in this workspace, not app source
+attachments/
+
+# Browser QA dumps
+screenshots/
+
+# Old static PWA + generated PDFs (not this Node app)
+artifacts/
+
+# Upload bundle for the VPS
+*.tar.gz
+*.zip

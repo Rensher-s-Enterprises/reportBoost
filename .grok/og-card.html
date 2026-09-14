@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <style>
+    @font-face {
+      font-family: Carlito;
+      src: url("file:///workspace/public/fonts/Carlito-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: Carlito;
+      src: url("file:///workspace/public/fonts/Carlito-Bold.ttf") format("truetype");
+      font-weight: 700;
+      font-style: normal;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: #F3F5F8;
+    }
+    .card {
+      width: 1200px;
+      height: 630px;
+      display: flex;
+      flex-direction: column;
+      font-family: Carlito, "Segoe UI", sans-serif;
+      background: #F3F5F8;
+      color: #1A2330;
+    }
+    .header {
+      height: 318px;
+      background-color: #1B365D;
+      background-image:
+        linear-gradient(rgba(0, 168, 198, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 168, 198, 0.08) 1px, transparent 1px);
+      background-size: 28px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 80px;
+      position: relative;
+    }
+    .header::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 7px;
+      background: #00A8C6;
+    }
+    .lockup {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    .mark {
+      width: 148px;
+      height: 148px;
+      flex-shrink: 0;
+      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.28));
+    }
+    .copy {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .copy h1 {
+      color: #F3F5F8;
+      font-size: 76px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 0.95;
+    }
+    .copy p {
+      color: #00A8C6;
+      font-size: 28px;
+      font-weight: 400;
+      letter-spacing: 0.045em;
+      line-height: 1.15;
+    }
+    .body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 36px 80px 28px;
+    }
+    .tiles {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 22px;
+    }
+    .tile {
+      background: #ffffff;
+      border: 1px solid #d8dee8;
+      border-radius: 16px;
+      padding: 22px 22px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-height: 168px;
+    }
+    .tile svg {
+      width: 32px;
+      height: 32px;
+    }
+    .tile h2 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #1B365D;
+    }
+    .tile p {
+      font-size: 18px;
+      color: #5b6778;
+      line-height: 1.35;
+    }
+    .foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #5b6778;
+      font-size: 16px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .foot span:last-child {
+      color: #00A8C6;
+      letter-spacing: 0.16em;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <header class="header">
+      <div class="lockup">
+        <svg class="mark" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="80" cy="80" r="78" fill="#00A8C6"/>
+          <circle cx="80" cy="80" r="70" fill="#F3F5F8"/>
+          <circle cx="80" cy="80" r="64" fill="none" stroke="#1B365D" stroke-width="2.2" opacity="0.18"/>
+          <path d="M36 118 V42 h22.5 L80 88 101.5 42 H124 V118 h-20 V70 L86.5 118 h-13 L56 70 V118 Z" fill="#1B365D"/>
+        </svg>
+        <div class="copy">
+          <h1>DSR Field</h1>
+          <p>Daily Service Reports</p>
+        </div>
+      </div>
+    </header>
+    <section class="body">
+      <div class="tiles">
+        <article class="tile">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="6" width="24" height="20" rx="3" stroke="#00A8C6" stroke-width="2"/>
+            <path d="M16 10 v8 M12 18 h8" stroke="#1B365D" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+          <h2>Switchgear</h2>
+          <p>LV and MV gear, voltages, and manufacturer data on every job.</p>
+        </article>
+        <article class="tile">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="5" width="20" height="22" rx="3" stroke="#00A8C6" stroke-width="2"/>
+            <path d="M11 15 l3.2 3.2 6.8-7" stroke="#1B365D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h2>Commissioning</h2>
+          <p>Official checklists from toolbox talk through final paperwork.</p>
+        </article>
+        <article class="tile">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="7" y="7" width="18" height="18" rx="3" stroke="#00A8C6" stroke-width="2"/>
+            <path d="M12 14 h8 M12 19 h6" stroke="#1B365D" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+          <h2>Field reports</h2>
+          <p>Daily service logs written on site, ready to file and share.</p>
+        </article>
+      </div>
+      <div class="foot">
+        <span>Mission Critical Group</span>
+        <span>Field Utility</span>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

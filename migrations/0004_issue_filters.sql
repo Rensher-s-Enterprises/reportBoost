@@ -1,0 +1,11 @@
+alter table dsr_issues add column if not exists priority text not null default '';
+alter table dsr_issues add column if not exists priority_label text not null default '';
+alter table dsr_issues add column if not exists assigned_to text not null default '';
+alter table dsr_issues add column if not exists asset text not null default '';
+alter table dsr_issues add column if not exists discipline text not null default '';
+alter table dsr_issues add column if not exists issue_type text not null default '';
+alter table dsr_issues add column if not exists due_date text not null default '';
+alter table dsr_issues add column if not exists created_by text not null default '';
+alter table dsr_issues add column if not exists identified_on text not null default '';
+create index if not exists dsr_issues_asset_idx on dsr_issues (project_id, asset);
+create index if not exists dsr_issues_priority_idx on dsr_issues (project_id, priority);
