@@ -20,7 +20,7 @@ import type {
   TimelineEntry,
 } from "./types";
 import { emptyProfile } from "./types";
-import { parseCxalloyIssues, refineCxalloyImport, llmParseDsr } from "./ai";
+import { refineCxalloyImport } from "./ai";
 import {
   entryClosedCodes,
   entryIssueCodes,
@@ -1555,6 +1555,7 @@ export const importCxalloyPdf = createServerFn({ method: "POST" })
       }
     }
     if (seeds.length < 3) {
+      const { parseCxalloyIssues } = await import("./ai.server");
       const parsed = await parseCxalloyIssues(text);
       if (!parsed.ok) {
         if (!seeds.length) return parsed;
@@ -2257,6 +2258,7 @@ export const importDsrPdf = createServerFn({ method: "POST" })
 
     let parsed = parseDsrText(text, data.filename || "");
     if (!data.skipLlm && parsed.entries.length < 2) {
+      const { llmParseDsr } = await import("./ai.server");
       const llm = await llmParseDsr(text);
       if (llm.ok && (llm.parsed.entries?.length || 0) > parsed.entries.length) {
         const p = llm.parsed;
